@@ -1,5 +1,4 @@
 import { Card, CardContent } from '@/components/ui/card'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export function TechnicianSection() {
   return (
@@ -16,19 +15,13 @@ export function TechnicianSection() {
           <Card className="w-full max-w-md border-none shadow-elevation rounded-2xl overflow-hidden bg-white">
             <CardContent className="flex flex-col items-center p-8 md:p-10">
               <div className="mb-6 relative">
-                <div className="absolute inset-0 bg-accent/10 rounded-full blur-xl transform scale-110"></div>
-                <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-white shadow-lg">
-                  <AvatarImage
-                    src="https://img.usecurling.com/ppl/medium?gender=male&seed=42"
-                    alt="João Silva"
-                    className="object-cover"
-                  />
-                  <AvatarFallback>JS</AvatarFallback>
-                </Avatar>
+                <div className="w-24 h-24 md:w-32 md:h-32 bg-accent/10 rounded-full flex items-center justify-center text-accent text-4xl font-bold border-4 border-white shadow-lg">
+                  RG
+                </div>
               </div>
 
               <h3 className="text-2xl font-bold text-foreground mb-2">
-                João Silva
+                Reginaldo Gonçalves
               </h3>
               <p className="text-accent font-medium mb-4">
                 Especialista em Minilabs
