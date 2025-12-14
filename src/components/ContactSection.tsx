@@ -1,141 +1,48 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 import { Button } from '@/components/ui/button'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { useToast } from '@/hooks/use-toast'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: 'O nome deve ter pelo menos 2 caracteres.',
-  }),
-  contact: z.string().min(5, {
-    message: 'Por favor, insira um email ou telefone válido.',
-  }),
-  message: z.string().min(10, {
-    message: 'A mensagem deve ter pelo menos 10 caracteres.',
-  }),
-})
+import { MessageCircle, Mail } from 'lucide-react'
 
 export function ContactSection() {
-  const { toast } = useToast()
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      contact: '',
-      message: '',
-    },
-  })
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-    toast({
-      title: 'Mensagem enviada!',
-      description:
-        'Recebemos sua solicitação de orçamento. Entraremos em contato em breve.',
-      duration: 5000,
-    })
-    form.reset()
-  }
-
   return (
     <section id="contact-form" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
-          <Card className="border border-border shadow-elevation rounded-2xl overflow-hidden">
-            <CardHeader className="bg-slate-50 border-b border-slate-100 py-8 text-center">
-              <CardTitle className="text-2xl md:text-3xl font-bold text-foreground">
-                Solicite um Orçamento
-              </CardTitle>
-              <p className="text-muted-foreground mt-2">
-                Preencha o formulário abaixo e entraremos em contato.
-              </p>
-            </CardHeader>
-            <CardContent className="p-6 md:p-8">
-              <Form {...form}>
-                <form
-                  onSubmit={form.handleSubmit(onSubmit)}
-                  className="space-y-6"
-                >
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-foreground font-medium">
-                          Nome Completo
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Seu nome"
-                            {...field}
-                            className="rounded-lg border-slate-200 focus:ring-accent focus:border-accent transition-all duration-200"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="contact"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-foreground font-medium">
-                          E-mail ou Telefone
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="seu@email.com ou (11) 99999-9999"
-                            {...field}
-                            className="rounded-lg border-slate-200 focus:ring-accent focus:border-accent transition-all duration-200"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-foreground font-medium">
-                          Mensagem
-                        </FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Descreva sua necessidade..."
-                            className="min-h-[120px] rounded-lg border-slate-200 focus:ring-accent focus:border-accent transition-all duration-200 resize-y"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button
-                    type="submit"
-                    className="w-full bg-accent hover:bg-blue-600 text-white font-semibold py-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-200 text-lg"
-                  >
-                    Enviar Mensagem
-                  </Button>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Entre em Contato
+          </h2>
+          <div className="h-1 w-20 bg-accent mx-auto rounded-full mb-6"></div>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Estamos prontos para atender você. Escolha a melhor forma de contato
+            abaixo para solicitar orçamentos ou tirar dúvidas.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-6 w-full justify-center items-center">
+          <Button
+            asChild
+            size="lg"
+            className="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-lg px-8 py-8 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center gap-3 w-full sm:w-auto min-w-[240px]"
+          >
+            <a
+              href="http://wa.me/5511982376474"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="w-8 h-8" />
+              WhatsApp
+            </a>
+          </Button>
+
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="bg-white hover:bg-slate-50 text-foreground border-2 border-slate-200 hover:border-accent hover:text-accent font-semibold text-lg px-8 py-8 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center gap-3 w-full sm:w-auto min-w-[240px]"
+          >
+            <a href="mailto:reginaldo.agoncalves@gmail.com">
+              <Mail className="w-8 h-8" />
+              Email
+            </a>
+          </Button>
         </div>
       </div>
     </section>
