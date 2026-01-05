@@ -10,10 +10,9 @@ export function HeroSection() {
   const plugin = useRef(Autoplay({ delay: 4500, stopOnInteraction: false }))
 
   const images = [
-    'https://img.usecurling.com/p/800/500?q=industrial%20printer%20machine',
-    'https://img.usecurling.com/p/800/500?q=photo%20lab%20equipment',
-    'https://img.usecurling.com/p/800/500?q=printing%20technology',
-    'https://img.usecurling.com/p/800/500?q=digital%20minilab',
+    'https://i.postimg.cc/3JLZCCg5/11660.png',
+    'https://i.postimg.cc/65HhLLCP/11661.png',
+    'https://i.postimg.cc/02tCddpq/11662.png',
   ]
 
   return (
