@@ -28,9 +28,11 @@ export function TechnicianSection() {
               </p>
 
               <p className="text-center text-muted-foreground leading-relaxed">
-                "Técnico especialista com mais de 15 anos de experiência em
-                manutenção de minilabs. Dedicado a oferecer soluções rápidas e
-                precisas para manter seu negócio funcionando."
+                "Técnico especialista com mais de 35 anos de experiência em
+                manutenção, calibração e reparo de minilabs. Atuou com as
+                principais marcas do mercado, incluindo Noritsu, fuji e outras.
+                Dedicado a oferecer soluções rápidas e precisas para garantir o
+                funcionamento contínuo e a qualidade do seu negócio."
               </p>
             </CardContent>
           </Card>
