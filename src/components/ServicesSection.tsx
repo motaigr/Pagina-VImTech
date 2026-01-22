@@ -40,15 +40,15 @@ export function ServicesSection() {
           <div className="h-1 w-20 bg-accent mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {services.map((service, index) => (
             <Card
               key={index}
               className="border border-border shadow-subtle hover:shadow-elevation hover:-translate-y-1 transition-all duration-300 rounded-xl overflow-hidden group flex flex-col"
             >
               <CardHeader className="p-0 bg-blue-50/50">
-                <div className="p-4 md:p-6 w-full">
-                  <AspectRatio ratio={16 / 9} className="bg-transparent">
+                <div className="p-2 w-full">
+                  <AspectRatio ratio={4 / 3} className="bg-transparent">
                     <img
                       src={service.image}
                       alt={service.title}
