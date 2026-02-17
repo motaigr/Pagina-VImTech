@@ -1,5 +1,4 @@
 import { useRef } from 'react'
-import { cn } from '@/lib/utils'
 import Autoplay from 'embla-carousel-autoplay'
 import {
   Carousel,
@@ -10,7 +9,7 @@ import {
 } from '@/components/ui/carousel'
 
 export function HeroSection() {
-  const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }))
+  const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
 
   const images = [
     'https://i.ibb.co/4g5X3v5h/Noritsu-1.png',
