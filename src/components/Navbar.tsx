@@ -47,10 +47,15 @@ export function Navbar() {
         <button
           onClick={() => scrollToSection('top')}
           className={cn(
-            'text-2xl font-bold transition-colors tracking-tight',
+            'text-2xl font-bold transition-colors tracking-tight flex items-center gap-3',
             isScrolled ? 'text-primary' : 'text-white',
           )}
         >
+          <img
+            src="https://i.ibb.co/bg0ZPnTL/VIM-Tech-minilab-logo-sem-fundo.png"
+            alt="VimTech Logo"
+            className="h-8 md:h-9 w-auto object-contain"
+          />
           VimTech
         </button>
 

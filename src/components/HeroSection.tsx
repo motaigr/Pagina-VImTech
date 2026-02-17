@@ -1,50 +1,19 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from '@/components/ui/carousel'
-import Autoplay from 'embla-carousel-autoplay'
-import { useRef } from 'react'
+import { cn } from '@/lib/utils'
 
 export function HeroSection() {
-  const plugin = useRef(Autoplay({ delay: 4500, stopOnInteraction: false }))
-
-  // Direct image links provided by user to resolve fetch errors
-  const images = [
-    'https://i.ibb.co/ks1qtc4T/Noritsu-2.png',
-    'https://i.ibb.co/21ZMwDPB/Noritsu.png',
-  ]
-
   return (
     <section
       id="hero-section"
       className="relative w-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] py-20 md:py-32 lg:py-40 overflow-hidden"
     >
       <div className="container mx-auto px-4 flex flex-col items-center text-center z-10 relative">
-        <div className="w-full max-w-5xl mb-8 md:mb-12 animate-fade-in-down">
-          <Carousel
-            plugins={[plugin.current]}
-            className="w-full"
-            opts={{
-              align: 'center',
-              loop: true,
-            }}
-          >
-            <CarouselContent>
-              {images.map((src, index) => (
-                <CarouselItem key={index} className="basis-full">
-                  <div className="flex items-center justify-center">
-                    <img
-                      src={src}
-                      alt={`Minilab machine ${index + 1}`}
-                      className="w-full h-auto object-contain"
-                      loading={index === 0 ? 'eager' : 'lazy'}
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+        <div className="w-full max-w-5xl mb-8 md:mb-12 animate-fade-in-down flex justify-center">
+          <img
+            src="https://i.ibb.co/4g5X3v5h/Noritsu-1.png"
+            alt="Noritsu Minilab Machine"
+            className="w-full h-auto object-contain max-h-[500px] md:max-h-[600px]"
+            loading="eager"
+          />
         </div>
 
         <p className="text-lg md:text-xl text-blue-50 max-w-2xl mb-8 font-medium leading-relaxed animate-fade-in-up">
