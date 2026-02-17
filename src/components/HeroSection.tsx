@@ -37,14 +37,14 @@ export function HeroSection() {
                   <div className="p-2">
                     <div
                       className={cn(
-                        'relative w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl border-4 border-white/20 bg-black/10',
+                        'relative w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl bg-white',
                         'aspect-[4/3] md:aspect-video',
                       )}
                     >
                       <img
                         src={src}
                         alt={`Minilab machine ${index + 1}`}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                        className="absolute inset-0 w-full h-full object-contain p-4 md:p-8 transition-transform duration-700 hover:scale-105"
                         loading={index === 0 ? 'eager' : 'lazy'}
                       />
                     </div>
