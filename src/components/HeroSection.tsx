@@ -10,11 +10,10 @@ import { cn } from '@/lib/utils'
 export function HeroSection() {
   const plugin = useRef(Autoplay({ delay: 4500, stopOnInteraction: false }))
 
-  // Updated images as per user request to fix runtime error (Failed to fetch)
-  // Replaced broken viewer links with direct high-quality placeholder images for Minilabs
+  // Direct image links provided by user to resolve fetch errors
   const images = [
-    'https://img.usecurling.com/p/1200/900?q=photo%20printing%20machine',
-    'https://img.usecurling.com/p/1200/900?q=digital%20minilab',
+    'https://i.ibb.co/ks1qtc4T/Noritsu-2.png',
+    'https://i.ibb.co/21ZMwDPB/Noritsu.png',
   ]
 
   return (
