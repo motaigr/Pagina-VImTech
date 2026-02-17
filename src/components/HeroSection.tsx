@@ -5,7 +5,6 @@ import {
 } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import { useRef } from 'react'
-import { cn } from '@/lib/utils'
 
 export function HeroSection() {
   const plugin = useRef(Autoplay({ delay: 4500, stopOnInteraction: false }))
@@ -34,22 +33,13 @@ export function HeroSection() {
             <CarouselContent>
               {images.map((src, index) => (
                 <CarouselItem key={index} className="basis-full">
-                  <div className="p-2">
-                    <div
-                      className={cn(
-                        'relative w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl bg-white',
-                        // Use aspect-video to better fit the wide Noritsu machines and avoid excessive cropping or gaps
-                        'aspect-video',
-                      )}
-                    >
-                      <img
-                        src={src}
-                        alt={`Minilab machine ${index + 1}`}
-                        // Removed padding and changed to object-cover to eliminate gaps and fill the container
-                        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
-                        loading={index === 0 ? 'eager' : 'lazy'}
-                      />
-                    </div>
+                  <div className="flex items-center justify-center">
+                    <img
+                      src={src}
+                      alt={`Minilab machine ${index + 1}`}
+                      className="w-full h-auto object-contain"
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
                   </div>
                 </CarouselItem>
               ))}
