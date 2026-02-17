@@ -38,13 +38,15 @@ export function HeroSection() {
                     <div
                       className={cn(
                         'relative w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl bg-white',
-                        'aspect-[4/3] md:aspect-video',
+                        // Use aspect-video to better fit the wide Noritsu machines and avoid excessive cropping or gaps
+                        'aspect-video',
                       )}
                     >
                       <img
                         src={src}
                         alt={`Minilab machine ${index + 1}`}
-                        className="absolute inset-0 w-full h-full object-contain p-4 md:p-8 transition-transform duration-700 hover:scale-105"
+                        // Removed padding and changed to object-cover to eliminate gaps and fill the container
+                        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
                         loading={index === 0 ? 'eager' : 'lazy'}
                       />
                     </div>
