@@ -10,11 +10,8 @@ import { cn } from '@/lib/utils'
 export function HeroSection() {
   const plugin = useRef(Autoplay({ delay: 4500, stopOnInteraction: false }))
 
-  const images = [
-    'https://i.postimg.cc/3JLZCCg5/11660.png',
-    'https://i.postimg.cc/65HhLLCP/11661.png',
-    'https://i.postimg.cc/02tCddpq/11662.png',
-  ]
+  // Updated images as per user request
+  const images = ['https://ibb.co/4n1Sc6Mx', 'https://ibb.co/Q3dY4mPV']
 
   return (
     <section
