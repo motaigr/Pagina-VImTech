@@ -1,6 +1,22 @@
+import { useRef } from 'react'
 import { cn } from '@/lib/utils'
+import Autoplay from 'embla-carousel-autoplay'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
 
 export function HeroSection() {
+  const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }))
+
+  const images = [
+    'https://i.ibb.co/4g5X3v5h/Noritsu-1.png',
+    'https://i.ibb.co/ks1qtc4T/Noritsu-2.png',
+  ]
+
   return (
     <section
       id="hero-section"
@@ -8,12 +24,36 @@ export function HeroSection() {
     >
       <div className="container mx-auto px-4 flex flex-col items-center text-center z-10 relative">
         <div className="w-full max-w-5xl mb-8 md:mb-12 animate-fade-in-down flex justify-center">
-          <img
-            src="https://i.ibb.co/4g5X3v5h/Noritsu-1.png"
-            alt="Noritsu Minilab Machine"
-            className="w-full h-auto object-contain max-h-[500px] md:max-h-[600px]"
-            loading="eager"
-          />
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: 'center',
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {images.map((src, index) => (
+                <CarouselItem
+                  key={index}
+                  className="flex justify-center items-center"
+                >
+                  <div className="relative w-full flex justify-center">
+                    <img
+                      src={src}
+                      alt={`Noritsu Minilab Machine ${index + 1}`}
+                      className="w-full h-auto object-contain max-h-[500px] md:max-h-[600px] drop-shadow-2xl"
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white hover:border-white/40" />
+            <CarouselNext className="hidden md:flex border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white hover:border-white/40" />
+          </Carousel>
         </div>
 
         <p className="text-lg md:text-xl text-blue-50 max-w-2xl mb-8 font-medium leading-relaxed animate-fade-in-up">
