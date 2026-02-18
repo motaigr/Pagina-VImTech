@@ -1,0 +1,287 @@
+/* Global styles - Theme, font, utilities, animations and global components */
+
+/* CHANGE THE FONT BELOW TO WHATEVER YOU WANT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* VimTech Design System Colors */
+    /* Primary Blue (Gradient Start): #2A52BE -> 224 64% 45% */
+    --primary: 224 64% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary Blue (Gradient End): #00C6FB -> 193 100% 49% */
+    --secondary: 193 100% 49%;
+    --secondary-foreground: 222.2 84% 4.9%;
+
+    /* Accent Blue: #1A73E8 -> 214 82% 51% */
+    --accent: 214 82% 51%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Background White: #FFFFFF */
+    --background: 0 0% 100%;
+    /* Text Primary (Dark): #2D3748 -> 218 23% 23% */
+    --foreground: 218 23% 23%;
+
+    /* Card: #FFFFFF */
+    --card: 0 0% 100%;
+    --card-foreground: 218 23% 23%;
+
+    /* Popover: #FFFFFF */
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 23% 23%;
+
+    /* Muted: #F1F5F9 -> 210 40% 96% */
+    --muted: 210 40% 96%;
+    /* Text Secondary (Light): #718096 -> 215 16% 47% */
+    --muted-foreground: 215 16% 47%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border/Input/Ring: #E2E8F0 -> 214 32% 91% */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 82% 51%; /* Using Accent for ring */
+
+    --radius: 0.75rem;
+
+    /* Sidebar variables (keeping defaults just in case) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Chart colors */
+    --chart-1: 224 64% 45%;
+    --chart-2: 193 100% 49%;
+    --chart-3: 214 82% 51%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    /* Dark mode adaptation if needed, though spec focuses on light/blue theme */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  /* NEVER REMOVE THIS */
+  section[aria-label='Notifications alt+T'] {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+@layer utilities {
+  /* KEEP ALL THE ANIMATIONS CLASSES THAT ARE USED BELOW */
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-down {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out-up {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-out-down {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes spotlight {
+    from {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  .animate-fade-out {
+    animation: fade-out 0.5s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 0.6s ease-out;
+  }
+
+  .animate-fade-out-up {
+    animation: fade-out-up 0.6s ease-out;
+  }
+
+  .animate-fade-out-down {
+    animation: fade-out-down 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.6s ease-out;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-spotlight {
+    animation: spotlight 2s ease forwards;
+  }
+
+  /* Custom utility for smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
