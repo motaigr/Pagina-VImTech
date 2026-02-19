@@ -4,12 +4,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/components/ui/carousel'
 
 export function HeroSection() {
-  const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
+  const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }))
 
   const images = [
     'https://i.ibb.co/4g5X3v5h/Noritsu-1.png',
@@ -43,15 +41,13 @@ export function HeroSection() {
                     <img
                       src={src}
                       alt={`Noritsu Minilab Machine ${index + 1}`}
-                      className="w-full h-auto object-contain max-h-[500px] md:max-h-[600px] drop-shadow-2xl"
+                      className="w-full h-auto object-contain max-h-[500px] md:max-h-[600px] drop-shadow-2xl border-4 border-white/30 rounded-xl"
                       loading={index === 0 ? 'eager' : 'lazy'}
                     />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white hover:border-white/40" />
-            <CarouselNext className="hidden md:flex border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white hover:border-white/40" />
           </Carousel>
         </div>
 
