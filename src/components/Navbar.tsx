@@ -48,7 +48,7 @@ export function Navbar() {
           onClick={() => scrollToSection('top')}
           className={cn(
             'text-2xl font-bold transition-colors tracking-tight flex items-center gap-3',
-            isScrolled ? 'text-primary' : 'text-white',
+            isScrolled ? 'text-secondary' : 'text-white',
           )}
         >
           <img
@@ -64,8 +64,8 @@ export function Navbar() {
           <button
             onClick={() => scrollToSection('services-section')}
             className={cn(
-              'text-sm font-medium hover:opacity-80 transition-colors',
-              isScrolled ? 'text-foreground' : 'text-white',
+              'text-sm font-medium hover:text-primary transition-colors',
+              isScrolled ? 'text-foreground' : 'text-white/90',
             )}
           >
             Serviços
@@ -73,8 +73,8 @@ export function Navbar() {
           <button
             onClick={() => scrollToSection('contact-form')}
             className={cn(
-              'text-sm font-medium hover:opacity-80 transition-colors',
-              isScrolled ? 'text-foreground' : 'text-white',
+              'text-sm font-medium hover:text-primary transition-colors',
+              isScrolled ? 'text-foreground' : 'text-white/90',
             )}
           >
             Entre em Contato
@@ -110,13 +110,13 @@ export function Navbar() {
         <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden flex flex-col p-4 gap-2 animate-fade-in-down border-t">
           <button
             onClick={() => scrollToSection('services-section')}
-            className="text-left text-foreground font-medium p-3 hover:bg-slate-50 rounded-md transition-colors"
+            className="text-left text-secondary font-medium p-3 hover:bg-slate-50 hover:text-primary rounded-md transition-colors"
           >
             Serviços
           </button>
           <button
             onClick={() => scrollToSection('contact-form')}
-            className="text-left text-foreground font-medium p-3 hover:bg-slate-50 rounded-md transition-colors"
+            className="text-left text-secondary font-medium p-3 hover:bg-slate-50 hover:text-primary rounded-md transition-colors"
           >
             Entre em Contato
           </button>

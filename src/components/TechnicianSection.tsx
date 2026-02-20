@@ -5,10 +5,10 @@ export function TechnicianSection() {
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
             Sobre o Técnico
           </h2>
-          <div className="h-1 w-20 bg-accent mx-auto rounded-full"></div>
+          <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
         </div>
 
         <div className="flex justify-center">
@@ -20,10 +20,10 @@ export function TechnicianSection() {
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+              <h3 className="text-2xl font-bold text-secondary mb-2">
                 Reginaldo Gonçalves
               </h3>
-              <p className="text-accent font-medium mb-4">
+              <p className="text-primary font-medium mb-4">
                 Especialista em Minilabs
               </p>
 
